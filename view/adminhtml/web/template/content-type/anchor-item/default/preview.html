@@ -1,0 +1,18 @@
+<div attr="data.main.attributes"
+     ko-style="data.main.style"
+     css="Object.assign({focused: $parent.parentContentType.preview.focusedAnchor() === $index()}, data.main.css())"
+     class="pagebuilder-content-type pagebuilder-anchor-item no-system-border focus-options">
+    <render args="getOptions().template" ></render>
+    <a class="pagebuilder-button-primary"
+       attr="data.link.attributes"
+       ko-style="data.link.style"
+       css="data.link.css"
+       click="function (context, event) { onClick($index(), event); }"
+       event="{ dragstart: function(context, event) { event.preventDefault(); }}">
+        <span class="anchor-item-drag-handle" css="{disabled: contentType.parentContentType.children().length <= 1}"></span>
+        <span attr="data.link_text.attributes"
+            data-bind="liveEdit: { field: 'anchor_text', placeholder: anchorPlaceholder, selectAll: true }, hasFocusNoScroll: contentType.parentContentType.preview.focusedAnchor() === $index()"
+            event="{ focusin: function (context, event) { onFocusIn($index(), event); }, focusout: function (context, event) { onFocusOut($index(), event); } }">
+        </span>
+    </a>
+</div>

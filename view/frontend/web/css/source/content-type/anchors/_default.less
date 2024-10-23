@@ -1,0 +1,33 @@
+
+
+//
+//  Default appearance styles
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .anchors{
+        padding: 20px 0;
+
+        .anchors-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            padding: 0;
+        }
+    }
+
+    .anchors-row {
+        z-index: 99999;
+    }
+}
+
+//
+//  Mobile (styles-m.css)
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .anchors{
+        display: none;
+    }
+}

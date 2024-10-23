@@ -6,7 +6,7 @@
  * @package   CustomPageBuilder
  * @version   1.0.0
  * @copyright Copyright © 2024 Denis Almeida | Ambienz
- * @author    Denis Almeida (https://www.ambienz.com.br)
+ * @author    Denis Almeida <https://www.ambienz.com.br>
  */
 
 use Magento\Framework\Component\ComponentRegistrar;

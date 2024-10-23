@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package   CustomPageBuilder
+ * @version   1.0.0
+ * @copyright Copyright © 2024 Denis Almeida | Ambienz
+ * @author    Denis Almeida <https://www.ambienz.com.br>
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="anchors"
+        label="Anchors"
+        component="Magento_PageBuilder/js/content-type-collection"
+        preview_component="Ambienz_CustomPageBuilder/js/content-type/anchors/preview"
+        master_component="Magento_PageBuilder/js/content-type/master-collection"
+        form="pagebuilder_anchors_form"
+        menu_section="elements"
+        icon="icon-pagebuilder-anchor"
+        sortOrder="31"
+        translate="label">
+        <children default_policy="deny">
+            <child name="anchor-item" policy="allow"/>
+        </children>
+        <appearances>
+            <appearance name="default"
+                default="true"
+                preview_template="Ambienz_CustomPageBuilder/content-type/anchors/default/preview"
+                master_template="Ambienz_CustomPageBuilder/content-type/anchors/default/master"
+                reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <style name="text_align" source="text_align"/>
+                        <style name="border" source="border_style" converter="Magento_PageBuilder/js/converter/style/border-style"/>
+                        <style name="border_color" source="border_color"/>
+                        <style name="border_width" source="border_width" converter="Magento_PageBuilder/js/converter/style/remove-px"/>
+                        <style name="border_radius" source="border_radius" converter="Magento_PageBuilder/js/converter/style/remove-px"/>
+                        <style name="margins" storage_key="margins_and_padding" reader="Magento_PageBuilder/js/property/margins" converter="Magento_PageBuilder/js/converter/style/margins"/>
+                        <style name="padding" storage_key="margins_and_padding" reader="Magento_PageBuilder/js/property/paddings" converter="Magento_PageBuilder/js/converter/style/paddings"/>
+                        <style name="display" source="display" converter="Magento_PageBuilder/js/converter/style/display" preview_converter="Magento_PageBuilder/js/converter/style/preview/display"/>
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <css name="css_classes"/>
+                    </element>
+                </elements>
+            </appearance>
+        </appearances>
+    </type>
+</config>
