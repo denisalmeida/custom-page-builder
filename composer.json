@@ -1,0 +1,37 @@
+{
+    "name": "ambienz/custom-page-builder",
+    "version": "1.0.0",
+    "description": "Provides Page Builder features and customizations",
+    "type": "magento2-module",
+    "license": [
+        "MIT"
+    ],
+    "authors": [
+        {
+            "name": "Denis Almeida",
+            "email": "denisalmeida@me.com",
+            "homepage": "https://denisalmeida.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Ambienz",
+            "email": "contato@ambienz.com.br",
+            "homepage": "https://ambienz.com.br",
+            "role": "Development Company"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.1",
+        "magento/framework": ">=100",
+        "magento/module-page-builder": ">=1"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Ambienz\\CustomPageBuilder\\": ""
+        }
+    }
+}
